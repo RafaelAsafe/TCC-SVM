@@ -3,10 +3,10 @@ from flask import Flask, request, jsonify, send_from_directory
 
 DIRETORIO = "C:\\Users\\Mysterio\\OneDrive - ifsp.edu.br\\Documentos\\Asafe IFSP\\TCC\\programação\\APis\\TESTE_API_ARQUIVOS"
 
-api = Flask(__name__)
+app = Flask(__name__)
 
 
-@api.route("/arquivos", methods=["GET"])
+@app.route("/arquivos", methods=["GET"])
 def lista_arquivos():
     arquivos = []
 
@@ -19,12 +19,12 @@ def lista_arquivos():
     return jsonify(arquivos)
 
 
-@api.route("/arquivos/<nome_do_arquivo>",  methods=["GET"])
+@app.route("/arquivos/<nome_do_arquivo>",  methods=["GET"])
 def get_arquivo(nome_do_arquivo):
     return send_from_directory(DIRETORIO, nome_do_arquivo, as_attachment=True)
 
 
-@api.route("/arquivos", methods=["POST"])
+@app.route("/arquivos", methods=["POST"])
 def post_arquivo():
     arquivo = request.files.get("meuArquivo")
 
@@ -36,4 +36,4 @@ def post_arquivo():
 
 
 if __name__ == "__main__":
-    api.run(debug=True, port=8000)
+    app.run(debug=True, port=5000)
