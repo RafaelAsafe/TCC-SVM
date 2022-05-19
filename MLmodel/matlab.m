@@ -22,7 +22,7 @@ A = load (’nome_arquivo.mat’);
 A = A.nome_arquivo;
 
 %% calcula o comprimento do sinal (quantidade de colunas) para ser
-% utilizado no laço de repetição FOR
+%% utilizado no laço de repetição FOR
 N = length(A)/200;
 % pré-alocação dos vetores de características (processamento mais rápido)
 vc_db = zeros(N,24);
@@ -51,8 +51,8 @@ cD2_db = detcoef(C1, L1, 2);
 cD1_db = detcoef(C1, L1, 1);
 
 %% cria os coeficientes cA5, cD5, cD4, cD3, cD2 e cD1 em C2 dos 5 níveis de
-% decomposição e, nesta ordem, indica o comprimento de cada um deles em L2
-% Família "coif1"
+%% decomposição e, nesta ordem, indica o comprimento de cada um deles em L2
+%% Família "coif1"
 [C2,L2] = wavedec(B,5,’coif1’);
 % extrai o coeficiente de aproximação cA5 de C
 cA5_coif = appcoef(C2,L2,’coif1’,5);
@@ -115,7 +115,7 @@ a = max (v(:));
 b = min (v(:));
 vx = 2* v / (a-b);
 c = min (vx(:));
-SVM - janelas de 1 segundo das crises - Experimentos 1 e 2 123
+%SVM - janelas de 1 segundo das crises - Experimentos 1 e 2 123
 vc_n_ce = vx - (c + 1); % vetor normalizado de treinamento
 
 %% faz a normalização (escalonamento) dos vetores de características de
