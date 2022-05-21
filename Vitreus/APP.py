@@ -2,13 +2,8 @@ from flask import Flask
 from vitreus.ext import configuration
 
 
-def minimal_app():
+def create_app(**config):
     app = Flask(__name__)
-    configurations.init_app(app)
-    return app
-
-
-def create_app():
-    app = minimal_app()
-    configurations.load_extensions(app)
+    configuration.init_app(app,**config)
+    configuration.load_extensions(app)
     return app

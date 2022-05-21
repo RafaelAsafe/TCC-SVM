@@ -1,0 +1,14 @@
+[default]
+#SQLALCHEMY_DATABASE_URI = 'SQLITE:///teste.db'
+TITLE = "vitreus"
+EXTENSIONS = [
+    "vitreus.ext.appearance:init_app",
+    "vitreus.blueprints.webui:init_app"
+    ]
+
+
+[production]
+#SQLALCHEMY_DATABASE_URI='postgres:///'
+
+#"vitreus.blueprints.restapi"#"vitreus.ext.database",#"vitreus.ext.auth",
+    #"vitreus.ext.commands",#"vitreus.ext.admin",
