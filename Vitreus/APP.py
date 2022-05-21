@@ -1,10 +1,5 @@
-import os
-from flask import Flask, render_template, request, jsonify, send_from_directory
-from flask_bootstrap import Bootstrap
-
-
-DIRETORIO = "C:\\Users\\Mysterio\\OneDrive - ifsp.edu.br\\Documentos\\Asafe IFSP\\TCC\\programação\\APis\\TESTE_API_ARQUIVOS"
-
+from flask import Flask
+from vitreus.ext import configuration
 
 app = Flask(__name__)
 Bootstrap(app)
