@@ -1,16 +1,19 @@
 import os
 from flask import Flask, render_template, request, jsonify, send_from_directory
+from flask_bootstrap import Bootstrap
+
 
 DIRETORIO = "C:\\Users\\Mysterio\\OneDrive - ifsp.edu.br\\Documentos\\Asafe IFSP\\TCC\\programação\\APis\\TESTE_API_ARQUIVOS"
 
 
 app = Flask(__name__)
+Bootstrap(app)
 
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'GET':
-        return render_template("index.html")
+        return render_template("index.html",**locals())# rederizar paginas html -**locals() passa todas as variaveis do app pro template má pratica usar somente no dev!!!!!!
 
 
 @app.route('/sobre')
