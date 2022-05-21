@@ -8,7 +8,7 @@ def sobre():
 
 def error():
     MsgError = f'página "{nome}" não existe'
-    return render_template("error404.html", MsgError2=MsgError)
+    return render_template("error404.html", MsgError=MsgError)
 
 def post_arquivo():
     arquivo = request.files.get("meuArquivo")
