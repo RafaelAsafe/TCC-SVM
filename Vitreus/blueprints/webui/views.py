@@ -11,6 +11,7 @@ def error(nome):
     return render_template("error404.html", MsgError=MsgError)
 
 def post_arquivo():
+    DIRETORIO = "C:\\Users\\Mysterio\\OneDrive - ifsp.edu.br\\Documentos\\Asafe IFSP\\TCC\\programação\\APis\\TESTE_API_ARQUIVOS"
     arquivo = request.files.get("meuArquivo")
     print(arquivo)
     nome_do_arquivo = arquivo.filename
