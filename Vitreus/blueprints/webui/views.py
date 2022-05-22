@@ -6,7 +6,7 @@ def index():
 def sobre():
     return render_template('sobre.html')
 
-def error():
+def error(nome):
     MsgError = f'página "{nome}" não existe'
     return render_template("error404.html", MsgError=MsgError)
 
