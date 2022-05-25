@@ -1,4 +1,6 @@
-from flask import abort, render_template
+import os
+from flask import abort, render_template, request
+
 
 def index():
     return render_template("index.html")
