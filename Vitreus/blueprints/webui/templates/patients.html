@@ -1,0 +1,23 @@
+{% extends "bootstrap/base.html" %} {% block title %}{{config.get('TITLE')}}{% endblock %} {% block navbar %}
+<div class="navbar">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+        </a>
+    </div>
+</div>
+{% endblock %} {% block content %}
+<div class="container">
+    <h1>{{config.get('TITLE')}}</h1>
+
+    <div class="jumbotron">
+        <ul class="list-group">
+            {% for patient in patients %}
+            <li class="list-group-item">
+                <a href="{{url_for('webui.patientview', patient_id=patient.id)}}">{{patient.name}}- {{patient.diagnosis}}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+</div>
+{% endblock %}

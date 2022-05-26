@@ -1,5 +1,6 @@
 import os
 from flask import abort, render_template, request
+from vitreus.ext.database import Patient
 
 
 def index():
@@ -11,6 +12,17 @@ def sobre():
 def error(nome):
     MsgError = f'página "{nome}" não existe'
     return render_template("error404.html", MsgError=MsgError)
+
+def patients():
+    patients = Patient.query.all()
+    return render_template("patients.html", patients=patients)
+
+def patient(patient_id):
+    patient = Patient.query.filter_by(id=patient_id).first() or abort(
+        404, "Paciente nao encontrado"
+    )
+    return render_template("patient.html", patient=patient)
+
 
 def post_arquivo():
     DIRETORIO = "C:\\Users\\Mysterio\\OneDrive - ifsp.edu.br\\Documentos\\Asafe IFSP\\TCC\\programação\\APis\\TESTE_API_ARQUIVOS"
