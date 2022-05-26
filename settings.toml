@@ -2,10 +2,11 @@
 SQLALCHEMY_DATABASE_URI = 'sqlite:///teste.db'
 SQLALCHEMY_TRACK_MODIFICATIONS = 'True'
 TITLE = "vitreus"
-EXTENSIONS = [
-    "vitreus.ext.appearance:init_app",
+EXTENSIONS = ["vitreus.ext.appearance:init_app",
     "vitreus.ext.database:init_app",
-    "vitreus.blueprints.webui:init_app"
+    "vitreus.ext.commands:init_app",
+    "vitreus.blueprints.webui:init_app",
+    
     
     ]
 

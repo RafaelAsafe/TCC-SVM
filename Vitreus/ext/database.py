@@ -8,7 +8,7 @@ class Patient(db.Model, SerializerMixin):
     name = db.Column(db.String(140))
     description = db.Column(db.Text)
     diagnosis = db.Column(db.Integer)
-    exam = db.Column(db.Integer)
+    #exam = db.Column(db.Integer)
 
 def init_app(app):
     db.init_app(app)
