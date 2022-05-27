@@ -6,6 +6,7 @@ EXTENSIONS = ["vitreus.ext.appearance:init_app",
     "vitreus.ext.database:init_app",
     "vitreus.ext.commands:init_app",
     "vitreus.blueprints.webui:init_app",
+    "vitreus.blueprints.resources_api:init_app",
     
     
     ]
