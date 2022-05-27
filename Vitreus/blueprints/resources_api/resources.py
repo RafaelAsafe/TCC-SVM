@@ -16,8 +16,8 @@ class PatientResourse(Resource):
         criar_novo_paciente()
 
 class PatientNumberResourse(Resource):
-    def get(self, product_id):
-        patient = Products.query.filter_by(id=patient_id).first() or abort(
-            404
+    def get(self, patient_id):
+        patient = Patient.query.filter_by(id=patient_id).first() or abort(
+            404 
         )
-        return jsonify(product.to_dict())
+        return jsonify(patient.to_dict())
