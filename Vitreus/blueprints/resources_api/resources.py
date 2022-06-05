@@ -1,6 +1,6 @@
 from flask import jsonify, abort
 from flask_restful import Resource
-from vitreus.ext.database import Patient
+from vitreus.models import Patient
 
 class PatientResourse(Resource):
     def get(self):
