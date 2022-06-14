@@ -48,6 +48,11 @@ def init_app(app):
     def add_user(username, password):
         """Adds a new user to the database"""
         return create_user(username, password)
+
+    #@app.cli.command()
+    #def add_patient(id,name,description,diagnosis):
+    #    """Adds a new user to the database"""
+    #    return create_patient(id,name,description,diagnosis)
     
     #somente para debug 
     @app.cli.command()

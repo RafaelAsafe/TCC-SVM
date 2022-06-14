@@ -28,6 +28,5 @@ class ExamResourse(Resource):
             {"exams":[exam.to_dict() for exam in exams]
             }
         )
-
-
-
+    def post (self):
+      create_patient()

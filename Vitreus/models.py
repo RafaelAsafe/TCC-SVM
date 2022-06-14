@@ -17,7 +17,7 @@ class Patient(db.Model, SerializerMixin):
 class Exam(db.Model, SerializerMixin):
     __tablename__ = 'exam'
 
-    #serialize_only = ('id', 'data', 'storage_ref')
+    #serialize_only = ('id', 'data', 'storage_ref','patient_id')
 
     id = db.Column(db.Integer, primary_key=True)
     data = db.Column(db.Date)
