@@ -1,23 +1,25 @@
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy_serializer import SerializerMixin
+from vitreus.models import Patient, Exam
 
 db = SQLAlchemy()
 
+def create_patient(name,description, diagnosis):
+    """Registra um novo paciente caso nao esteja cadastrado"""
+    #aprimorar o requisito de usuário já cadastrado para cpf 
+    if Patient.query.filter_by(name=name).first():
+        raise RuntimeError(f'{name} ja esta cadastrado')
+    patient = Patient(name=name,description=description,diagnosis=diagnosis)
+    db.session.add(patient)
+    db.session.commit()
+    return patient
 
-class Patient(db.Model, SerializerMixin):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(140))
-    description = db.Column(db.Text)
-    diagnosis = db.Column(db.Integer)
-    exams = db.relationship('exam', backref='Patient')
-
-
-class exam(db.Model, SerializerMixin):
-    id = db.Column(db.Integer, primary_key=True)
-    data = db.Column(db.Date)
-    storage_ref = db.Column(db.String())
-    patient_id = db.Column(db.Integer, db.ForeignKey(Patient.id))
-
+def create_exam(id, data,storage_ref,patient_id):
+    """Registra um novo paciente caso nao esteja cadastrado"""
+    #aprimorar para evitar exames repetidos 
+    exam = Exam(id=id,data=data,storage_ref=storage_ref,patient_id=patient_id)
+    db.session.add(exam)
+    db.session.commit()
+    return exam
 
 def init_app(app):
     db.init_app(app)

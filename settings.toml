@@ -1,19 +1,25 @@
 [default]
+FLASK_ADMIN_NAME = "Vitreus Admin"
+FLASK_ADMIN_TEMPLATE_MODE = "bootstrap3"
+FLASK_ADMIN_SWATCH = 'Flatly'
+TITLE = "Vitreus"
+SECRET_KEY = "jadkfbsdkjbfbh"
+PASSWORD_SCHEMES = ['pbkdf2_sha512', 'md5_crypt']
 SQLALCHEMY_DATABASE_URI = 'sqlite:///teste.db'
-SQLALCHEMY_TRACK_MODIFICATIONS = 'True'
-TITLE = "vitreus"
-EXTENSIONS = ["vitreus.ext.appearance:init_app",
+SQLALCHEMY_TRACK_MODIFICATIONS = "True"
+
+EXTENSIONS = [
+    "vitreus.ext.appearance:init_app",
     "vitreus.ext.database:init_app",
     "vitreus.ext.commands:init_app",
+    "vitreus.ext.admin:init_app",
+    "vitreus.ext.auth:init_app",
     "vitreus.blueprints.webui:init_app",
-    "vitreus.blueprints.resources_api:init_app",
-    
-    
+    "vitreus.blueprints.patient_api:init_app" 
     ]
 
 
 [production]
 #SQLALCHEMY_DATABASE_URI='postgres:///'
 
-#"vitreus.blueprints.restapi"#"vitreus.ext.database",#"vitreus.ext.auth",
-    #"vitreus.ext.commands",#"vitreus.ext.admin",
+#"vitreus.blueprints.apis

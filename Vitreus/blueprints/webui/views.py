@@ -1,6 +1,6 @@
 import os
 from flask import abort, render_template, request
-from vitreus.ext.database import Patient
+from vitreus.models import Patient
 
 
 def index():
