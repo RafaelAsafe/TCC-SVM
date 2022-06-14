@@ -14,7 +14,7 @@ def create_patient(name,description, diagnosis):
     return patient
 
 def create_exam(id, data,storage_ref,patient_id):
-    """Registra um novo paciente caso nao esteja cadastrado"""
+    """Registra um novo exame"""
     #aprimorar para evitar exames repetidos 
     exam = Exam(id=id,data=data,storage_ref=storage_ref,patient_id=patient_id)
     db.session.add(exam)
