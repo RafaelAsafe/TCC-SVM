@@ -6,7 +6,7 @@ TITLE = "Vitreus"
 SECRET_KEY = "jadkfbsdkjbfbh"
 PASSWORD_SCHEMES = ['pbkdf2_sha512', 'md5_crypt']
 SQLALCHEMY_DATABASE_URI = 'sqlite:///teste.db'
-SQLALCHEMY_TRACK_MODIFICATIONS = 'True'
+SQLALCHEMY_TRACK_MODIFICATIONS = "True"
 
 EXTENSIONS = [
     "vitreus.ext.appearance:init_app",
@@ -15,7 +15,7 @@ EXTENSIONS = [
     "vitreus.ext.admin:init_app",
     "vitreus.ext.auth:init_app",
     "vitreus.blueprints.webui:init_app",
-    "vitreus.blueprints.resources_api:init_app"  
+    "vitreus.blueprints.patient_api:init_app"  
     
     ]
 
@@ -23,5 +23,4 @@ EXTENSIONS = [
 [production]
 #SQLALCHEMY_DATABASE_URI='postgres:///'
 
-#"vitreus.blueprints.restapi"#"vitreus.ext.database",#"vitreus.ext.auth",
-    #"vitreus.ext.commands",#"vitreus.ext.admin",
+#"vitreus.blueprints.apis

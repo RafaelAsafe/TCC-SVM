@@ -1,10 +1,11 @@
 from flask import jsonify, abort
 from flask_restful import Resource
-from vitreus.models import Patient
+from vitreus.models import Patient, Exam
 
-class PatientResourse(Resource):
+class ExamResourse(Resource):
     def get(self):
-        patients = Patient.query.all()
+        patient = Patient.query.filter_by(id=patient_id).first()
+
         return jsonify(
             {"patient":[
                 patient.to_dict()
@@ -15,7 +16,7 @@ class PatientResourse(Resource):
     def post (self):
         criar_novo_paciente()
 
-class PatientNumberResourse(Resource):
+class ExamNumberResourse(Resource):
     def get(self, patient_id):
         patient = Patient.query.filter_by(id=patient_id).first() or abort(
             404 

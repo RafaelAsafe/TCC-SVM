@@ -20,3 +20,4 @@ class User(db.Model,SerializerMixin):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(140))
     password = db.Column(db.String(512))
+    admin = db.Column("admin", db.Boolean)
