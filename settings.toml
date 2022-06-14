@@ -15,8 +15,7 @@ EXTENSIONS = [
     "vitreus.ext.admin:init_app",
     "vitreus.ext.auth:init_app",
     "vitreus.blueprints.webui:init_app",
-    "vitreus.blueprints.patient_api:init_app"  
-    
+    "vitreus.blueprints.patient_api:init_app" 
     ]
 
 
