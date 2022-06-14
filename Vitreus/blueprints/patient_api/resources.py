@@ -1,6 +1,6 @@
 from flask import jsonify, abort
 from flask_restful import Resource
-
+from vitreus.ext.database import create_patient, create_exam
 
 from vitreus.models import Patient, Exam
 
@@ -11,8 +11,8 @@ class PatientResourse(Resource):
             {"patient":[patient.to_dict() for patient in patients]}
         )
 
-    #def post (self):
-       # criar_novo_paciente()
+    def post (self):
+       create_patient()
 
 class PatientNumberResourse(Resource):
     def get(self, patient_id):
@@ -29,4 +29,4 @@ class ExamResourse(Resource):
             }
         )
     def post (self):
-      create_patient()
+      create_exam()
