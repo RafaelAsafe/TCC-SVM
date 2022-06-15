@@ -27,11 +27,6 @@ def create_exam(data,storage_ref,patient_id):
     db.session.commit()
     return exam
 
-#def update_patient(id,name,description, diagnosis):
-    
-    db.session.add(patient_obj)
-    db.session.commit()
-
 DIRETORIO = "ASDASDASD"
 
 class PatientResourse(Resource):
