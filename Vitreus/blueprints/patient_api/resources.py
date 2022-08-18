@@ -27,7 +27,7 @@ def create_exam(data,storage_ref,patient_id):
     db.session.commit()
     return exam
 
-DIRETORIO = "ASDASDASD"
+DIRETORIO = "Exemplo"
 
 class PatientResourse(Resource):
     def get(self):
